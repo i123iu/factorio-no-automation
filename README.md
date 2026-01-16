@@ -1,6 +1,6 @@
 # Factorio: No Automation
 
-A mod for Factorio that removes all forms of automation - craft items by hand, mine ores manually and drive trains. No robots!
+A mod for Factorio that removes all forms of automation - Assembling Machines, Mining Drills, Construction and Logistic Robots, and Automated Rail Transportation. 
 
 Space Age is not supported. 
 
