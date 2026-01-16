@@ -47,8 +47,25 @@ Get-ChildItem -Path . | Where-Object {
     Write-Host "Copied: $($_.Name)"
 }
 
-# Create zip file
-Compress-Archive -Path "$tempDir\$modName" -DestinationPath $zipName -Force
+# Create zip file with forward slashes for cross-platform compatibility
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+
+if (Test-Path $zipName) {
+    Remove-Item $zipName -Force
+}
+
+$zip = [System.IO.Compression.ZipFile]::Open($zipName, [System.IO.Compression.ZipArchiveMode]::Create)
+
+try {
+    $tempDirFullPath = (Resolve-Path $tempDir).Path
+    Get-ChildItem -Path "$tempDir\$modName" -Recurse -File | ForEach-Object {
+        $relativePath = $_.FullName.Substring($tempDirFullPath.Length + 1).Replace('\', '/')
+        [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, $_.FullName, $relativePath) | Out-Null
+        Write-Host "Added to zip: $relativePath"
+    }
+} finally {
+    $zip.Dispose()
+}
 
 # Clean up temp directory
 Remove-Item $tempDir -Recurse -Force
