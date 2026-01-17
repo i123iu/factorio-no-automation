@@ -1,9 +1,9 @@
 {
     "name": "factorio-no-automation",
     "version": "0.0.4",
-    "title": "Factorio: No Automation",
+    "title": "No Automation",
     "author": "i123iu",
-    "description": "Removes automation from Factorio - Assembly Machines, Mining Drills, Construction and Logistic Robots, and Automated Rail Transportation. ",
+    "description": "Removes all forms of automation from the base game - assembling machines, mining drills, construction and logistic robots, and automated rail transportation. ",
     "factorio_version": "2.0",
     "dependencies": ["base", "!space-age"],
     "homepage": "https://github.com/i123iu/factorio-no-automation"
