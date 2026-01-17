@@ -4,7 +4,7 @@ A mod for Factorio that removes all forms of automation - Assembling Machines, M
 
 Space Age is not supported. 
 
-<img src="https://raw.githubusercontent.com/i123iu/factorio-no-automation/main/icon.png" alt="Factorio: No Automation" width="128" />
+<img src="https://raw.githubusercontent.com/i123iu/factorio-no-automation/master/icon.png" alt="Factorio: No Automation" width="128" />
 
 ## Gameplay Changes
 
