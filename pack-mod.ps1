@@ -49,6 +49,7 @@ Get-ChildItem -Path . | Where-Object {
 
 # Create zip file with forward slashes for cross-platform compatibility
 Add-Type -AssemblyName System.IO.Compression.FileSystem
+Add-Type -AssemblyName System.IO.Compression
 
 if (Test-Path $zipName) {
     Remove-Item $zipName -Force
